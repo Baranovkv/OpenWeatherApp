@@ -29,7 +29,7 @@ class WeatherViewController: UIViewController {
 		
 		self.weatherViewModel.onCurrentWeaterUpdated = { [weak self] in
 			DispatchQueue.main.async {
-				if let currentWeather = self?.weatherViewModel.currentWeather {
+				if let currentWeather = self?.weatherViewModel.currentWeather  {
 					self?.currentWeatherView.updateUI(with: currentWeather)
 				}
 			}

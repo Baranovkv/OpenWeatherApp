@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct CurrentWeather: Codable {
 	let coordinates: Coordinates

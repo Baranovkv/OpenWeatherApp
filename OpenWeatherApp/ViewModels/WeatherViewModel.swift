@@ -13,6 +13,7 @@ final class WeatherViewModel: NSObject {
 	let locationManager = CLLocationManager()
 	var userLocation: CLLocation?
 	
+	
 	var currentWeather: CurrentWeather? {
 		didSet {
 			self.onCurrentWeaterUpdated?()
@@ -63,14 +64,14 @@ final class WeatherViewModel: NSObject {
 extension WeatherViewModel: CLLocationManagerDelegate {
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-	
-			if status == .authorizedAlways || status == .authorizedWhenInUse {
-				userLocation = manager.location
-				print("location updated")
-						fetchWeatherForLocation()
-
-			}
+		
+		if status == .authorizedAlways || status == .authorizedWhenInUse {
+			userLocation = manager.location
+			print("location updated")
+			fetchWeatherForLocation()
+			
 		}
+	}
 	
 	func requestLocation() {
 		locationManager.requestWhenInUseAuthorization()
